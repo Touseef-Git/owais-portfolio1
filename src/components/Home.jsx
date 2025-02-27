@@ -1,5 +1,5 @@
 import React from "react";
-import profile1 from "../assets/profile1.webp"; // Profile image import
+import profile2 from "../assets/profile2.png"; // Profile image import
 
 const Home = () => {
   return (
@@ -40,7 +40,7 @@ const Home = () => {
       {/* Right Side (Image) */}
       <div className="md:w-1/2 flex justify-end mt-10 md:mt-0 relative">
         <div className="absolute w-64 h-64 bg-purple-200 rounded-full -z-10 animate-wave"></div>
-        <img src={profile1} alt="Profile" className="w-90 md:w-98 z-10" />
+        <img src={profile2} alt="Profile" className="w-90 md:w-98 z-10" />
         {/* <div className="absolute w-64 h-64 bg-gray-200 rounded-full -z-10 left-0 bottom-0"></div> */}
       </div>
     </section>
