@@ -1,0 +1,11 @@
+service id:
+service_iriis7v
+
+tamplate id:
+template_vpmdwhm
+
+Public key:
+nJRaBbujihlr7JHlG
+
+private key:
+8pIs9_tWpgSAh2yKs3fMY
