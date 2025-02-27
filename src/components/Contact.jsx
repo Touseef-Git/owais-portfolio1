@@ -25,7 +25,7 @@ const Contact = () => {
     emailjs
       .send(
         "service_iriis7v", // Tumhara Service ID
-        "template_vpmdwhm", // Tumhara Template ID
+        "template_tgsid9o", // Tumhara Template ID
         {
           from_name: formData.name, // User ka naam
           reply_to: formData.email, // User ka email
