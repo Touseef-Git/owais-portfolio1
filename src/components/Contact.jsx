@@ -1,47 +1,65 @@
-import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import React, { useState } from "react";
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    to_name: '',
-    from_name: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
+
   const [loading, setLoading] = useState(false);
 
+  // Handle Input Change
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const sendEmail = (e) => {
+  // Send Form Data to Web3Forms
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs.sendForm('service_iriis7v', 'template_ckl62km', e.target, 'nJRaBbujihlr7JHlG')
-      .then((result) => {
-        console.log(result.text);
-        alert('Message sent successfully!');
-        setFormData({
-          to_name: '',
-          from_name: '',
-          message: '',
-        });
-      }, (error) => {
-        console.log(error.text);
-        alert('Failed to send the message, please try again.');
-      })
-      .finally(() => {
-        setLoading(false);
+    const formDataToSend = new FormData();
+    formDataToSend.append("access_key", "e5e3f4a9-cf85-4fdc-92fd-6bdb99334069"); // Replace with your Web3Forms access key
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("subject", formData.subject);
+    formDataToSend.append("message", formData.message);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend,
       });
+
+      const result = await response.json();
+
+      if (result.success) {
+        console.log("Form submitted successfully!", result);
+        alert("Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" }); // Reset form
+      } else {
+        console.error("Form submission failed:", result.message);
+        alert("Failed to send the message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div id="contact" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" className="p-6 md:p-12 flex flex-col md:flex-row gap-10 bg-gray-100">
+    <div
+      id="contact"
+      data-aos="fade-up"
+      data-aos-delay="200"
+      data-aos-duration="1500"
+      className="p-6 md:p-12 flex flex-col md:flex-row gap-10 bg-gray-100"
+    >
       {/* Left Side - Contact Info */}
       <div className="md:w-1/2 space-y-5">
         <h3 className="text-gray-600 uppercase font-bold text-sm">Contact</h3>
@@ -72,21 +90,30 @@ const Contact = () => {
 
       {/* Right Side - Contact Form */}
       <div className="md:w-1/2 bg-white shadow-lg rounded-xl p-6 md:p-8">
-        <form className="space-y-4" onSubmit={sendEmail}>
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <input
             type="text"
-            name="to_name"
-            placeholder="Recipient Name"
-            value={formData.to_name}
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#3d03b8]"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
             onChange={handleChange}
             required
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#3d03b8]"
           />
           <input
             type="text"
-            name="from_name"
-            placeholder="Your Name"
-            value={formData.from_name}
+            name="subject"
+            placeholder="Subject"
+            value={formData.subject}
             onChange={handleChange}
             required
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#3d03b8]"
