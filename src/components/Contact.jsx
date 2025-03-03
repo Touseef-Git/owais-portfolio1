@@ -1,69 +1,44 @@
-import React, { useState, useRef } from "react";
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
-import emailjs from "emailjs-com";
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
+    to_name: '',
+    from_name: '',
+    message: '',
   });
-
   const [loading, setLoading] = useState(false);
 
-  // Handle Input Change
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
-  // Send Email Function
   const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .send(
-        "service_iriis7v", // Tumhara Service ID
-        "template_tgsid9o", // Tumhara Template ID
-        {
-          from_name: formData.name, // User ka naam
-          reply_to: formData.email, // User ka email
-          subject: formData.subject, // Email Subject
-          message: formData.message, // User ka message
-        },
-        "nJRaBbujihlr7JHlG" // Tumhara Public Key
-      )
-      .then((response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", subject: "", message: "" }); // Reset form
+    emailjs.sendForm('service_iriis7v', 'template_o59c4um', e.target, '8pIs9_tWpgSAh2yKs3fMY')
+      .then((result) => {
+        console.log(result.text);
+        alert('Message sent successfully!');
+        setFormData({
+          to_name: '',
+          from_name: '',
+          message: '',
+        });
+      }, (error) => {
+        console.log(error.text);
+        alert('Failed to send the message, please try again.');
       })
-      .catch((err) => {
-        console.log("FAILED...", err);
-        alert("Message sending failed! Try again.");
-      })
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+      });
   };
-
-  // const form = useRef();
-
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-
-  //   emailjs
-  //     .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
-  //       publicKey: 'YOUR_PUBLIC_KEY',
-  //     })
-  //     .then(
-  //       () => {
-  //         console.log('SUCCESS!');
-  //       },
-  //       (error) => {
-  //         console.log('FAILED...', error.text);
-  //       },
-  //     );
-  // };
 
   return (
     <div id="contact" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" className="p-6 md:p-12 flex flex-col md:flex-row gap-10 bg-gray-100">
@@ -100,27 +75,18 @@ const Contact = () => {
         <form className="space-y-4" onSubmit={sendEmail}>
           <input
             type="text"
-            name="user_name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#3d03b8]"
-          />
-          <input
-            type="email"
-            name="user_email"
-            placeholder="Your Email"
-            value={formData.email}
+            name="to_name"
+            placeholder="Recipient Name"
+            value={formData.to_name}
             onChange={handleChange}
             required
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#3d03b8]"
           />
           <input
             type="text"
-            name="subject"
-            placeholder="Subject"
-            value={formData.subject}
+            name="from_name"
+            placeholder="Your Name"
+            value={formData.from_name}
             onChange={handleChange}
             required
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#3d03b8]"
