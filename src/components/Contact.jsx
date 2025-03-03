@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import emailjs from "emailjs-com";
 
@@ -46,6 +46,25 @@ const Contact = () => {
       .finally(() => setLoading(false));
   };
 
+  // const form = useRef();
+
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+
+  //   emailjs
+  //     .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
+  //       publicKey: 'YOUR_PUBLIC_KEY',
+  //     })
+  //     .then(
+  //       () => {
+  //         console.log('SUCCESS!');
+  //       },
+  //       (error) => {
+  //         console.log('FAILED...', error.text);
+  //       },
+  //     );
+  // };
+
   return (
     <div id="contact" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" className="p-6 md:p-12 flex flex-col md:flex-row gap-10 bg-gray-100">
       {/* Left Side - Contact Info */}
@@ -81,7 +100,7 @@ const Contact = () => {
         <form className="space-y-4" onSubmit={sendEmail}>
           <input
             type="text"
-            name="name"
+            name="user_name"
             placeholder="Your Name"
             value={formData.name}
             onChange={handleChange}
@@ -90,7 +109,7 @@ const Contact = () => {
           />
           <input
             type="email"
-            name="email"
+            name="user_email"
             placeholder="Your Email"
             value={formData.email}
             onChange={handleChange}
