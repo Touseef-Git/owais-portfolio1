@@ -22,7 +22,7 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs.sendForm('service_iriis7v', 'template_o59c4um', e.target, '8pIs9_tWpgSAh2yKs3fMY')
+    emailjs.sendForm('service_iriis7v', 'template_o59c4um', e.target, 'nJRaBbujihlr7JHlG')
       .then((result) => {
         console.log(result.text);
         alert('Message sent successfully!');
