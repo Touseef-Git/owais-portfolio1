@@ -6,32 +6,33 @@ const Home = () => {
     <section id="home" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" className="flex flex-col md:flex-row mx-auto max-w-7xl items-center justify-between px-10 py-16">
       {/* Left Content */}
       <div className="md:w-1/2 text-center md:text-left ">
-        <h1 className="text-5xl font-bold text-[#0f2943] leading-tight">
-          Crafting Digital <br /> Experiences with Passion
+        <h1 className="text-5xl font-bold text-[#1b1b1b] leading-tight">
+        Building the Digital World
+        <br /> <span className="text-[#FCB415]">You Imagine </span>
         </h1>
         <p className="text-gray-600 mt-5">
-          Transforming ideas into elegant solutions through creative design and innovative development.
+        Creating unique, engaging digital experiences that connect brands with their audience in meaningful ways.
         </p>
         <div className="mt-6 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <button className="bg-[#3d03b8] text-white px-8 py-3 rounded-full shadow-md hover:bg-[#3d03b8]">
+          <button className="bg-[#FCB415] text-white px-8 py-3 rounded-full shadow-md hover:bg-[#3d03b8]">
             View My Work
           </button>
-          <button className="border border-gray-400 text-[#3d03b8] px-8 py-3 rounded-full shadow-md hover:bg-[#3d03b8] hover:text-white">
+          <button className="border border-gray-400 text-[#FCB415] px-8 py-3 rounded-full shadow-md hover:bg-[#3d03b8] hover:text-white">
             Let's Connect
           </button>
         </div>
         {/* Stats */}
         <div className="mt-8 flex justify-center md:justify-start space-x-10">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-[#0f2943]">5+</h2>
+            <h2 className="text-2xl font-bold text-[#1b1b1b]">5+</h2>
             <p className="text-gray-600">Years Experience</p>
           </div>
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-[#0f2943]">100+</h2>
+            <h2 className="text-2xl font-bold text-[#1b1b1b]">30+</h2>
             <p className="text-gray-600">Projects Completed</p>
           </div>
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-[#0f2943]">50+</h2>
+            <h2 className="text-2xl font-bold text-[#1b1b1b]">20+</h2>
             <p className="text-gray-600">Happy Clients</p>
           </div>
         </div>

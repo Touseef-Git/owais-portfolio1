@@ -20,8 +20,8 @@ const Navbar = () => {
 
   return ( 
     <header className="bg-white shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] rounded-full mt-4 mx-auto max-w-7xl px-6 py-3 flex items-center justify-between sticky top-0 z-50">
-      <a href="/" className="text-2xl font-bold text-[#0f2943]">
-        Owais Folio
+      <a href="/" className="text-2xl font-bold text-[#1b1b1b]">
+        M.Owais
       </a>
 
       {/* Desktop Menu */}
@@ -33,8 +33,8 @@ const Navbar = () => {
               onClick={() => handleScroll(section)}
               className={`cursor-pointer font-semibold ${
                 activeSection === section
-                  ? "text-[#3d03b8] border-b-2 border-[#3d03b8]"
-                  : "text-gray-700 hover:text-[#3d03b8]"
+                  ? "text-[#FCB415] border-b-2 border-[#FCB415]"
+                  : "text-gray-700 hover:text-[#FCB415]"
               }`}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
