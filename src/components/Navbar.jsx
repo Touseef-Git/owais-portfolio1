@@ -64,7 +64,7 @@ const Navbar = () => {
       >
         {/* Close Button */}
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-lg font-semibold">EasyFolio</h2>
+          <h2 className="text-lg font-semibold">M.Owais</h2>
           <FaTimes className="text-2xl cursor-pointer" onClick={() => setMenuOpen(false)} />
         </div>
 

@@ -28,24 +28,24 @@ const Services = () => {
     <section id="services" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" className="py-16">
       <div className="container mx-auto px-6 lg:px-16">
       <div className="text-center mb-5">
-                    <h2 className="text-3xl font-bold text-[#3d03b8]">Services</h2>
-                    <div className="w-20 h-1 bg-[#3d03b8] mx-auto mt-3 rounded-full animate-wave"></div>
-                    <p className="text-gray-600 mt-2">
+                    <h2 className="text-3xl font-bold text-[#FCB415]">Services</h2>
+                    <div className="w-20 h-1 bg-[#FCB415] mx-auto mt-3 rounded-full animate-wave"></div>
+                    {/* <p className="text-gray-600 mt-2">
                         Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
                         consequatur vel illum qui dolorem.
-                    </p>
+                    </p> */}
 
                 </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left Side Content */}
           <div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#0f2943]">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#1b1b1b]">
               Consectetur adipiscing elit sed do eiusmod tempor
             </h2>
             <p className="text-gray-600 mt-4">
               Nulla metus metus ullamcorper vel tincidunt sed euismod nibh volutpat velit class aptent taciti sociosqu ad litora.
             </p>
-            <button className="mt-6 px-6 py-3 border-2 border-[#3d03b8] text-[#3d03b8] rounded-full transition duration-300 hover:bg-[#3d03b8] hover:text-white">
+            <button className="mt-6 px-6 py-3 border-2 border-[#FCB415] text-[#FCB415] rounded-full transition duration-300 hover:bg-[#FCB415] hover:text-white">
               See all services
             </button>
           </div>
@@ -57,7 +57,7 @@ const Services = () => {
                 key={index}
                 className="p-6 bg-white rounded-2xl shadow-lg transform transition duration-300 hover:-translate-y-3 hover:shadow-2xl"
               >
-                <div className="text-4xl text-[#3d03b8] mb-4">{service.icon}</div>
+                <div className="text-4xl text-[#FCB415] mb-4">{service.icon}</div>
                 <h4 className="text-xl font-semibold text-gray-900">{service.title}</h4>
                 <p className="text-gray-600 mt-2">{service.description}</p>
               </div>

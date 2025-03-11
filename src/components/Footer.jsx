@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="text-center py-6 bg-white">
       <p className="text-gray-600 text-sm">
-        © Copyright <span className="font-bold">EasyFolio</span> All Rights Reserved
+        © Copyright <span className="font-bold">M,Owais</span> All Rights Reserved
       </p>
 
       {/* Social Icons */}

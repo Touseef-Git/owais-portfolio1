@@ -77,7 +77,7 @@ const About = () => {
 
                         <div className="mt-6">
                             <p className="italic text-gray-700 font-semibold">Muhammad Owais</p>
-                            <p className="text-gray-500 text-sm">Location, Islamabad</p>
+                            <p className="text-gray-500 text-sm">Islamabad, Pakistan</p>
                         </div>
 
 

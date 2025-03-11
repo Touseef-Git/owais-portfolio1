@@ -56,12 +56,12 @@ const TestimonialSlider = () => {
     <div id="testimonials" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" className="py-16 px-6 lg:px-12 bg-gray-100">
       {/* Header */}
       <div className="text-center mb-5">
-        <h2 className="text-3xl font-bold text-[#3d03b8]">Testimonials</h2>
-        <div className="w-20 h-1 bg-[#3d03b8] mx-auto mt-3 rounded-full animate-wave"></div>
-        <p className="text-gray-600 mt-2">
+        <h2 className="text-3xl font-bold text-[#FCB415]">Testimonials</h2>
+        <div className="w-20 h-1 bg-[#FCB415] mx-auto mt-3 rounded-full animate-wave"></div>
+        {/* <p className="text-gray-600 mt-2">
           Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
           consequatur vel illum qui dolorem.
-        </p>
+        </p> */}
 
       </div>
       <div className=" lg:px-12 max-w-5xl mx-auto bg-white shadow-md rounded-xl p-8 flex items-center">
@@ -81,7 +81,7 @@ const TestimonialSlider = () => {
             <SwiperSlide key={testimonial.id}>
               <div className="flex flex-col md:flex-row items-center">
                 <div className="md:w-3/4 text-center md:text-left p-8">
-                  <h3 className="text-xl font-bold text-[#0f2943]">
+                  <h3 className="text-xl font-bold text-[#1b1b1b]">
                     Impedit dolor facilis nulla
                   </h3>
                   <p className="italic text-gray-700 mt-3">{testimonial.text}</p>
@@ -92,7 +92,7 @@ const TestimonialSlider = () => {
                       className="w-12 h-12 rounded-full mr-3"
                     />
                     <div>
-                      <h4 className="text-[#0f2943] font-semibold">
+                      <h4 className="text-[#1b1b1b] font-semibold">
                         {testimonial.name}
                       </h4>
                       <span className="text-gray-500 text-sm">{testimonial.role}</span>

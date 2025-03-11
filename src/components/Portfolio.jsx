@@ -44,12 +44,12 @@ const Portfolio = () => {
             <div className="max-w-6xl mx-auto px-6 lg:px-12">
                 {/* Header */}
                 <div className="text-center">
-                    <h2 className="text-3xl font-bold text-[#3d03b8]">Portfolio</h2>
-                    <div className="w-20 h-1 bg-[#3d03b8] mx-auto mt-3 rounded-full animate-wave"></div>
-                    <p className="text-gray-600 mt-2">
+                    <h2 className="text-3xl font-bold text-[#FCB415]">Portfolio</h2>
+                    <div className="w-20 h-1 bg-[#FCB415] mx-auto mt-3 rounded-full animate-wave"></div>
+                    {/* <p className="text-gray-600 mt-2">
                         Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
                         consequatur vel illum qui dolorem.
-                    </p>
+                    </p> */}
 
                 </div>
             </div>
@@ -62,8 +62,8 @@ const Portfolio = () => {
               onClick={() => setActiveFilter(category)}
               className={`px-5 py-2 rounded-full font-semibold ${
                 activeFilter === category
-                  ? "bg-[#3d03b8] text-white"
-                  : "text-gray-800 hover:text-[#3d03b8]"
+                  ? "bg-[#FCB415] text-white"
+                  : "text-gray-800 hover:text-[#FCB415]"
               } transition duration-300`}
             >
               {category}
@@ -82,7 +82,7 @@ const Portfolio = () => {
               >
                 <img src={project.image} alt={project.title} className="w-full h-64 object-cover" />
                 <div className="p-5">
-                  <span className="text-xs uppercase font-bold text-[#3d03b8]">{project.category}</span>
+                  <span className="text-xs uppercase font-bold text-[#FCB415]">{project.category}</span>
                   <h3 className="text-lg font-semibold text-gray-900 mt-2">{project.title}</h3>
                   <p className="text-gray-600 mt-2">{project.description}</p>
                 </div>

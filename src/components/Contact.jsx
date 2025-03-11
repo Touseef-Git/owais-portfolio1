@@ -62,27 +62,29 @@ const Contact = () => {
     >
       {/* Left Side - Contact Info */}
       <div className="md:w-1/2 space-y-5">
-        <h3 className="text-gray-600 uppercase font-bold text-sm">Contact</h3>
-        <h2 className="text-4xl font-bold text-gray-900">
-          Nemo enim ipsam voluptatem quia voluptas aspernatur
+        <h3 className="text-[#FCB415] uppercase text-3xl font-bold">Contact</h3>
+        <h2 className="text-4xl font-bold text-[#1b1b1b]">
+        Get in Touch & Let's Create!
         </h2>
         <p className="text-gray-600">
-          Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.
+        Let’s Connect! Whether you have a project idea, need technical expertise, or just want to discuss Flutter development, feel free to reach out. I’m always open to new opportunities and collaborations! 
         </p>
         <div className="space-y-4 text-gray-700">
           <p className="flex items-center gap-3">
-            <FaEnvelope className="text-[#3d03b8] text-xl" />
-            info@example.com
+            <FaEnvelope className="text-[#FCB415] text-xl" />
+            muh.owais.dev@gmail.com
+
           </p>
           <p className="flex items-center gap-3">
-            <FaPhoneAlt className="text-[#3d03b8] text-xl" />
-            +1 5589 55488 558
+            <FaPhoneAlt className="text-[#FCB415] text-xl" />
+            +923352410002 
+
           </p>
           <p className="flex items-center gap-3">
-            <FaMapMarkerAlt className="text-[#3d03b8] text-xl" />
-            A108 Adam Street, New York, NY 535022
+            <FaMapMarkerAlt className="text-[#FCB415] text-xl" />
+            G 9/2, Islamabad, Pakistan
           </p>
-          <a href="#" className="text-[#3d03b8] font-semibold flex items-center gap-2 hover:underline">
+          <a href="#" className="text-[#FCB415] font-semibold flex items-center gap-2 hover:underline">
             Open Map →
           </a>
         </div>
@@ -98,7 +100,7 @@ const Contact = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#3d03b8]"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#FCB415]"
           />
           <input
             type="email"
@@ -107,7 +109,7 @@ const Contact = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#3d03b8]"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#FCB415]"
           />
           <input
             type="text"
@@ -116,7 +118,7 @@ const Contact = () => {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#3d03b8]"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#FCB415]"
           />
           <textarea
             name="message"
@@ -125,11 +127,11 @@ const Contact = () => {
             value={formData.message}
             onChange={handleChange}
             required
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#3d03b8]"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#FCB415]"
           ></textarea>
           <button
             type="submit"
-            className="w-full bg-[#3d03b8] text-white p-3 rounded-lg font-semibold hover:bg-[#3d03b8] transition duration-300"
+            className="w-full bg-[#FCB415] text-white p-3 rounded-lg font-semibold hover:bg-[#FCB415] transition duration-300"
             disabled={loading}
           >
             {loading ? "Sending..." : "Submit Message"}
