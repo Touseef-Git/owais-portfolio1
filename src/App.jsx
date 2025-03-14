@@ -13,6 +13,7 @@ import Services from './components/Services';
 import FAQs from './components/Faqs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CompanySlider from './components/CompanySlider';
 
 function App() {
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
     <div>   
       <Navbar/>   
       <Home/>
+      <CompanySlider/>
       <About/>
       <Resume/>
       <Portfolio/>
