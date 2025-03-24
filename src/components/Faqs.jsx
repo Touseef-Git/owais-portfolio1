@@ -3,30 +3,49 @@ import { BiChevronDown, BiChevronRight } from "react-icons/bi"; // Import Icons
 
 const faqsData = [
     {
-        question: "Non consectetur a erat nam at lectus urna duis?",
-        answer:
-            "Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida.",
+        question: "What services do you offer?",
+        answer: "I specialize in mobile app development (iOS and Android), website development using React.js, and server-side development with Node.js. Additionally, I offer project consultation, API integration, app deployment, and technical troubleshooting. My expertise also includes project management, leading development teams, and providing professional graphic design services through my skilled team of designers."
     },
     {
-        question: "Feugiat scelerisque varius morbi enim nunc faucibus?",
-        answer:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        question: "Do you work on both Android and iOS apps and websites?",
+        answer: "Yes, I develop apps for both platforms using Flutter, ensuring a seamless user experience across devices."
     },
     {
-        question: "Dolor sit amet consectetur adipiscing elit pellentesque?",
-        answer:
-            "Vestibulum morbi blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada.",
+        question: "Can you help with app deployment to the App Store and Google Play Store?",
+        answer: "Absolutely! I handle the complete app deployment process, including ensuring compliance with store policies and guidelines."
     },
     {
-        question: "Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?",
-        answer:
-            "Faucibus turpis in eu mi bibendum neque egestas congue quisque egestas diam in arcu.",
+        question: "Do you provide project consultation?",
+        answer: "Yes, I offer professional consultation to help you refine your project idea, define technical requirements, and plan a roadmap for successful development and deployment."
     },
     {
-        question: "Tempus quam pellentesque nec nam aliquam sem et tortor?",
-        answer:
-            "Ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis aliquam faucibus purus.",
+        question: "Can you work with existing apps or projects?",
+        answer: "Yes, I can enhance, maintain, or troubleshoot existing projects. I also help in adding new features and improving app performance."
     },
+    {
+        question: "What industries have you worked with?",
+        answer: "I've worked across various industries, including e-commerce, real estate, finance, sports media, social networking, and rewards-based platforms."
+    },
+    {
+        question: "Do you provide post-launch support?",
+        answer: "Yes, I offer post-launch support, including updates, bug fixes, and performance optimization to ensure your app remains reliable and up-to-date."
+    },
+    {
+        question: "What is your development process?",
+        answer: "My process involves understanding your requirements, creating a project plan, developing the app, rigorous testing, and finally deploying it to the respective app stores. I ensure continuous communication and feedback throughout the project."
+    },
+    {
+        question: "Do you work on fixed-price projects or hourly rates?",
+        answer: "I offer flexible pricing models, including fixed-price contracts for well-defined projects and hourly rates for tasks requiring ongoing work or flexibility."
+    },
+    {
+        question: "Can you integrate third-party services or APIs into the app?",
+        answer: "Yes, I can integrate various third-party services and APIs, such as payment gateways, Firebase, social media platforms, and more, based on your app's requirements."
+    },
+    {
+        question: "How can I get started?",
+        answer: "Simply reach out through the contact form on my website, provide a brief overview of your project or query, and I'll get back to you promptly to discuss further."
+    }
 ];
 
 const FAQs = () => {

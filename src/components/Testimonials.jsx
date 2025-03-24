@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import testimonials2 from '../assets/testimonials/testimonials2.jpg'
 import testimonials7 from '../assets/testimonials/testimonials7.webp'
-import testimonials8 from '../assets/testimonials/testimonials8.webp'
+import testimonials8 from '../assets/testimonials/testimonials8.png'
 import testimonials10 from '../assets/testimonials/testimonials10.webp'
 import testimonials9 from '../assets/testimonials/testimonials9.webp'
 import { section } from "framer-motion/client";
@@ -14,38 +14,24 @@ import { section } from "framer-motion/client";
 const testimonials = [
   {
     id: 1,
-    name: "Jena Karlis",
-    role: "Store Owner",
-    text: "Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.",
-    image: testimonials2,
+    name: "Matt Brandon",
+    role: "CEO",
+    text: "Muhammad Owais is a highly skilled developer and a quick problem solver. He consistently delivers quality work and approaches challenges with efficiency and expertise. I always enjoy working with him and look forward to collaborating again in the future!",
+    image: testimonials9,
   },
   {
     id: 2,
-    name: "John Doe",
-    role: "Business Owner",
-    text: "Omnis aspernatur accusantium qui delectus praesentium repellendus. Facilis sint odio aspernatur voluptas commodii qui qui qui pariatur.",
+    name: "Muhammad Umer",
+    role: "CEO",
+    text: "Muhammad Owais transformed our project idea into a fully functional app and website. His technical expertise, combined with clear communication and professional insights, made the entire process smooth and efficient. We look forward to collaborating again!",
     image: testimonials7,
   },
   {
     id: 3,
-    name: "Emily Watson",
-    role: "Designer",
-    text: "Corrupti deleniti itaque quaerat ipsum deleniti culpa tempora tempore. Et consequatur exercitationem hic aspernatur nobis es  Corrupti deleniti itaque quaerat ipsum deleniti culpa tempora tempore. Et consequatur exercitationem hic aspernatur nobis est.",
+    name: "Bahram Bahtiyar",
+    role: "CEO",
+    text: "Owais and his team delivered exceptional results for our branding and app development needs. The designs were creative and aligned perfectly with our vision. The app was flawlessly deployed and has been a hit with our users. Outstanding work!",
     image: testimonials8,
-  },
-  {
-    id: 4,
-    name: "Jina Karlis",
-    role: "Store Owner",
-    text: "Corrupti deleniti itaque quaerat ipsum deleniti culpa tempora tempore. Et consequatur exercitationem hic aspernatur nobis es  Corrupti deleniti itaque quaerat ipsum deleniti culpa tempora tempore. Et consequatur exercitationem hic aspernatur nobis est.",
-    image: testimonials10,
-  },
-  {
-    id: 5,
-    name: "Matt Brandon",
-    role: "Freelancer",
-    text: "Corrupti deleniti itaque quaerat ipsum deleniti culpa tempora tempore. Et consequatur exercitationem hic aspernatur nobis es  Corrupti deleniti itaque quaerat ipsum deleniti culpa tempora tempore. Et consequatur exercitationem hic aspernatur nobis est.",
-    image: testimonials9,
   },
 ];
 
@@ -82,7 +68,7 @@ const TestimonialSlider = () => {
               <div className="flex flex-col md:flex-row items-center">
                 <div className="md:w-3/4 text-center md:text-left p-8">
                   <h3 className="text-xl font-bold text-[#1b1b1b]">
-                    Impedit dolor facilis nulla
+                  Transforming Ideas into Reality
                   </h3>
                   <p className="italic text-gray-700 mt-3">{testimonial.text}</p>
                   <div className="flex items-center mt-5">

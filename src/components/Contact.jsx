@@ -67,7 +67,7 @@ const Contact = () => {
         Get in Touch & Let's Create!
         </h2>
         <p className="text-gray-600">
-        Let’s Connect! Whether you have a project idea, need technical expertise, or just want to discuss Flutter development, feel free to reach out. I’m always open to new opportunities and collaborations! 
+        Whether you have a project idea, need technical expertise, require consultation, or are looking for professional app development services, feel free to get in touch. I’m always open to exploring new opportunities and collaborations! 
         </p>
         <div className="space-y-4 text-gray-700">
           <p className="flex items-center gap-3">
