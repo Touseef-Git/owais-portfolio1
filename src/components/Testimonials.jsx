@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import testimonials2 from '../assets/testimonials/testimonials2.jpg'
-import testimonials7 from '../assets/testimonials/testimonials7.webp'
+import testimonials7 from '../assets/testimonials/testimonials7.jpeg'
 import testimonials8 from '../assets/testimonials/testimonials8.png'
 import testimonials10 from '../assets/testimonials/testimonials10.webp'
 import testimonials9 from '../assets/testimonials/testimonials9.webp'
@@ -17,7 +17,7 @@ const testimonials = [
     name: "Matt Brandon",
     role: "CEO",
     text: "Muhammad Owais is a highly skilled developer and a quick problem solver. He consistently delivers quality work and approaches challenges with efficiency and expertise. I always enjoy working with him and look forward to collaborating again in the future!",
-    image: testimonials9,
+    image: testimonials7,
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const testimonials = [
     name: "Bahram Bahtiyar",
     role: "CEO",
     text: "Owais and his team delivered exceptional results for our branding and app development needs. The designs were creative and aligned perfectly with our vision. The app was flawlessly deployed and has been a hit with our users. Outstanding work!",
-    image: testimonials8,
+    image: testimonials7,
   },
 ];
 

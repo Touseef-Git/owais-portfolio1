@@ -40,9 +40,9 @@ const Services = () => {
             <p className="text-gray-600 mt-4">
               Delivering high-quality apps, websites, and designs. Helping you create solutions that stand out.
             </p>
-            <button className="mt-6 px-6 py-3 border-2 border-[#FCB415] text-[#FCB415] rounded-full transition duration-300 hover:bg-[#FCB415] hover:text-white">
+            {/* <button className="mt-6 px-6 py-3 border-2 border-[#FCB415] text-[#FCB415] rounded-full transition duration-300 hover:bg-[#FCB415] hover:text-white">
               See all services
-            </button>
+            </button> */}
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">

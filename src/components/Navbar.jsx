@@ -1,13 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import twitter from "../assets/twitter.png";
+import ologo from "../assets/ologo.png";
 import linkedin from "../assets/linkedin.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
 
   const handleScroll = (id) => {
     setActiveSection(id);
@@ -18,10 +40,11 @@ const Navbar = () => {
     }
   };
 
-  return ( 
+  return (
     <header className="bg-white shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] rounded-full mt-4 mx-auto max-w-7xl px-6 py-3 flex items-center justify-between sticky top-0 z-50">
-      <a href="/" className="text-2xl font-bold text-[#1b1b1b]">
-        M.Owais
+      <a href="/" className="flex items-center gap-2 ">
+        <img src={ologo} alt="M.Owais Logo" className="h-14 w-14 " />
+        {/* grayscale hover:grayscale-0 transition-all duration-500 */}
       </a>
 
       {/* Desktop Menu */}

@@ -43,7 +43,7 @@ const Footer = () => {
           href="https://www.linkedin.com/in/muhammad-tauseef-544104231"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#3d03b8] font-semibold hover:underline"
+          className="text-[#FCB415] font-semibold hover:underline"
         >
           Muhammad Tauseef
         </a>
