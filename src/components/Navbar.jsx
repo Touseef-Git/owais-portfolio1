@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import twitter from "../assets/twitter.png";
-import ologo from "../assets/ologo.png";
+import ologo1 from "../assets/ologo1.png";
 import linkedin from "../assets/linkedin.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -43,7 +43,7 @@ const Navbar = () => {
   return (
     <header className="bg-white shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] rounded-full mt-4 mx-auto max-w-7xl px-6 py-3 flex items-center justify-between sticky top-0 z-50">
       <a href="/" className="flex items-center gap-2 ">
-        <img src={ologo} alt="M.Owais Logo" className="h-14 w-14 " />
+        <img src={ologo1} alt="M.Owais Logo" className="h-14 w-14 " />
         {/* grayscale hover:grayscale-0 transition-all duration-500 */}
       </a>
 
