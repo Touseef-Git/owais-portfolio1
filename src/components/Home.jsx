@@ -1,8 +1,9 @@
 import React from "react";
-import profile2 from "../assets/profile2.png"; // Profile image import
+import Lottie from "lottie-react";
+import homeAnimation from "../assets/home/animation.json"; // Your Lottie animation file
 
 const Home = () => {
-  // Function to scroll to Portfolio section
+  // Scroll to Portfolio section
   const handleScroll = () => {
     const portfolioSection = document.getElementById("portfolio");
     if (portfolioSection) {
@@ -41,10 +42,14 @@ const Home = () => {
           >
             View My Work
           </button>
-          <button onClick={handleContact} className="border border-gray-400 text-[#FCB415] px-8 py-3 rounded-full shadow-md hover:bg-[#FCB415] hover:text-white">
+          <button
+            onClick={handleContact}
+            className="border border-gray-400 text-[#FCB415] px-8 py-3 rounded-full shadow-md hover:bg-[#FCB415] hover:text-white"
+          >
             Let's Connect
           </button>
         </div>
+
         {/* Stats */}
         <div className="mt-8 flex justify-center md:justify-start space-x-10">
           <div className="text-center">
@@ -62,9 +67,11 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Right Side (Image) */}
+      {/* Right Side (Lottie Animation instead of Image) */}
       <div className="md:w-1/2 flex justify-end mt-10 md:mt-0 relative">
-        <img src={profile2} alt="Profile" className="w-90 md:w-98 z-10" />
+        <div className="w-80 md:w-96">
+          <Lottie animationData={homeAnimation} loop={true} />
+        </div>
       </div>
     </section>
   );

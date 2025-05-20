@@ -42,10 +42,14 @@ const Navbar = () => {
 
   return (
     <header className="bg-white shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] rounded-full mt-4 mx-auto max-w-7xl px-6 py-3 flex items-center justify-between sticky top-0 z-50">
-      <a href="/" className="flex items-center gap-2 ">
-        <img src={ologo1} alt="M.Owais Logo" className="h-14 w-14 " />
-        {/* grayscale hover:grayscale-0 transition-all duration-500 */}
-      </a>
+      <a href="/" className="flex items-center gap-2">
+  <img
+    src={ologo1}
+    alt="M.Owais Logo"
+    className="object-contain"
+    style={{ height: '30px', width: '120px' }} // You can adjust these values
+  />
+</a>
 
       {/* Desktop Menu */}
       <nav className="hidden md:flex space-x-6">

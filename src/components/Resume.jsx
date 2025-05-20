@@ -17,12 +17,7 @@ const Resume = () => {
 
                 {/* Work Experience Section */}
                 <div className="mt-12">
-                    <h3 className="text-3xl font-semibold text-[#0f2943]">Work Experience</h3>
-                    <p className="text-gray-600 mt-2 mb-5">
-                        Experienced Senior Flutter Developer with 5+ years in building high-performance Android & iOS apps. Skilled in Dart, Flutter, Firebase, Restful APIs, and State Management (GetX).<br />
-
-                        Proven expertise in team leadership, real-time chat, in-app purchases, live streaming, and payment integrations (Stripe, Square, Google Pay, Apple Pay).Passionate about creating scalable, user-friendly, and innovative mobile solutions.
-                    </p>
+                    <h3 className="text-3xl font-semibold mb-3 text-[#0f2943]">Work Experience</h3>
 
                     {/* Timeline */}
 
@@ -36,16 +31,36 @@ const Resume = () => {
                             </div>
                             <div className="w-2/3">
                                 <h5 className="text-lg font-bold text-[#0f2943]">Chief Technology Officer (CTO)</h5>
-                                {/* <p className="text-gray-600 mt-1">
-                                    Quia nobis sequi est occaecati aut. Reprehenderit et iusto quae reciendis et quis. Eius vel ratione.
-                                </p> */}
                                 <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1">
                                     <li> Lead and manage technical teams to ensure successful project delivery.</li>
                                     <li>Solve complex technical issues in existing projects.</li>
                                     <li>Evaluate and plan new projects to align with company goals.</li>
                                     <li> Ensure the technical quality and scalability of all projects.</li>
                                     <li>Foster a collaborative environment to enhance team productivity and technical expertise.</li>
+                                </ul>
+                                <h5 className="text-lg font-bold mt-3 text-[#0f2943]">Team Lead.
+                                </h5>
+                                <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                                    <li>Lead and manage a team, dividing projects into modules and assigning tasks to ensure
+                                        efficient workflow.</li>
+                                    <li>Review and provide feedback on team members' code to maintain high-quality standards.</li>
+                                    <li>Address and resolve technical issues, ensuring smooth project progress and maintenance of
+                                        ongoing projects.</li>
+                                    <li>Mentor and train interns, fostering their growth and development within the team.</li>
 
+                                </ul>
+                                <h5 className="text-lg font-bold mt-3 text-[#0f2943]">Senior Flutter Developer
+                                </h5>
+                                <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                                    <li>Lead the development and deployment of mobile applications on both Google Play Store
+                                    and Apple App Store.</li>
+                                    <li>Ensure smooth functionality by identifying and resolving technical issues throughout the
+                                    development process.</li>
+                                    <li>Oversee the management and maintenance of both new and existing projects, ensuring
+                                    continuous improvement and scalability.</li>
+                                    <li>Collaborate with cross-functional teams to deliver high-performance, responsive mobile applications.</li>
+                                    <li>Provide technical guidance and support to junior developers, ensuring adherence to project
+                                    timelines and quality standards.</li>
                                 </ul>
                             </div>
                         </div>
@@ -83,10 +98,10 @@ const Resume = () => {
                             <div className="w-2/3">
                                 <h5 className="text-md font-bold text-[#0f2943]">Frontend Developer (Flutter)</h5>
                                 <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1">
-                               <li> UI Development: Build and design mobile app interfaces using Flutter’s widget-based
-                                framework, ensuring responsive and adaptive user experiences across both Android and iOS.</li>
-                                <li>State Management: Implement and manage application state management using GetX to
-                                maintain a consistent user experience.</li>
+                                    <li> UI Development: Build and design mobile app interfaces using Flutter’s widget-based
+                                        framework, ensuring responsive and adaptive user experiences across both Android and iOS.</li>
+                                    <li>State Management: Implement and manage application state management using GetX to
+                                        maintain a consistent user experience.</li>
                                 </ul>
                             </div>
                             {/* <div className="absolute -left-6 top-1.5 w-4 h-4 bg-purple-500 rounded-full"></div> */}

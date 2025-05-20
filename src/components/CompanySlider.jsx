@@ -10,7 +10,7 @@ const companies = [
 
 const CompanySlider = () => {
   return (
-    <div className="overflow-hidden bg-white/80 p-5 rounded-xl shadow-md w-full">
+    <div className="overflow-hidden bg-white/80 p-5 rounded-xl w-full">
       <div className="flex gap-10 animate-scroll">
         {[...companies, ...companies].map((company, index) => (
           <a key={index} href={company.link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
