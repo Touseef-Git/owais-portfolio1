@@ -1,49 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 
-import Brainbook from "../assets/portfolio/Brainbook.jpg";
-import new_logo from "../assets/portfolio/new_logo.jpg";
-import egasi from "../assets/portfolio/egasi.png";
-import lingua from "../assets/portfolio/lingua.png";
+import { db } from "../firebaseConfig";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 
 const Portfolio = () => {
-  const projects = [
-    {
-      id: 1,
-      category: "Crypto Miners",
-      title: "Modern Dashboard Interface",
-      description:
-        "Maecenas faucibus mollis interdum sed posuere consectetur est at lobortis.",
-      image: new_logo,
-    },
-    {
-      id: 2,
-      category: "Egasi",
-      title: "Creative Brand Identity",
-      description:
-        "Vestibulum id ligula porta felis euismod semper at vulputate.",
-      image: egasi,
-    },
-    {
-      id: 3,
-      category: "Brainbook",
-      title: "Modern Dashboard Interface",
-      description:
-        "Maecenas faucibus mollis interdum sed posuere consectetur est at lobortis.",
-      image: Brainbook,
-    },
-    {
-      id: 4,
-      category: "Lingua",
-      title: "Creative Brand Identity",
-      description:
-        "Vestibulum id ligula porta felis euismod semper at vulputate.",
-      image: lingua,
-    },
-  ];
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const q = query(collection(db, "projects"), orderBy("createdAt", "desc"));
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const data = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setProjects(data);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   return (
     <section
@@ -61,44 +39,47 @@ const Portfolio = () => {
         </div>
 
         {/* Swiper Carousel */}
-        <Swiper
-          spaceBetween={20}
-          slidesPerView={2}
-          loop={true}
-          autoplay={{
-            delay: 2500,
-            reverseDirection: true,
-            disableOnInteraction: false,
-          }}
-          modules={[Autoplay]}
-          className="mt-12"
-        >
-          {projects.map((project) => (
-            <SwiperSlide key={project.id}>
-            <div className="bg-white h-[400px] flex flex-col justify-between rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-5 flex flex-col justify-between flex-grow">
-                <div>
-                  <span className="text-xs uppercase font-bold text-[#FCB415]">
-                    {project.category}
-                  </span>
-                  <h3 className="text-lg font-semibold text-gray-900 mt-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 mt-2 line-clamp-3">
-                    {project.description}
-                  </p>
+        {projects.length === 0 ? (
+          <p className="text-center text-gray-500 mt-10">No projects found.</p>
+        ) : (
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={2}
+            loop={true}
+            autoplay={{
+              delay: 2500,
+              reverseDirection: true,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay]}
+            className="mt-12"
+          >
+            {projects.map((project) => (
+              <SwiperSlide key={project.id}>
+                <div className="bg-white h-[400px] flex flex-col justify-between rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-5 flex flex-col justify-between flex-grow">
+                    <div>
+                      <span className="text-xs uppercase font-bold text-[#FCB415]">
+                        {project.category}
+                      </span>
+                      <h3 className="text-lg font-semibold text-gray-900 mt-2">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-600 mt-2 line-clamp-3">
+                        {project.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </div>
     </section>
   );

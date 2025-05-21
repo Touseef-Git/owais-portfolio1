@@ -9,3 +9,57 @@ nJRaBbujihlr7JHlG
 
 private key:
 8pIs9_tWpgSAh2yKs3fMY
+
+.........................................................................
+
+firebase sdk 
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyC8O1zIqLImL8sRn7aBJmvt2xcGicCtzAc",
+  authDomain: "owais-b54e6.firebaseapp.com",
+  projectId: "owais-b54e6",
+  storageBucket: "owais-b54e6.firebasestorage.app",
+  messagingSenderId: "212977002955",
+  appId: "1:212977002955:web:e3be96ec292be12a282e4e"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+..................................................
+
+
+default security rules 
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if
+          request.time < timestamp.date(2025, 6, 20);
+    }
+  }
+}
+caution:
+The default security rules for test mode allow anyone with your database reference to view, edit and delete all data in your database for the next 30 days
+
+....................................................
+
+Cloud Name 
+
+dr0ezjxdj
+
+........................
+
+upload preset 
+
+name : owais_portfolio
+
+..................
