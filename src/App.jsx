@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom"; // ✅ Corrected here
+import ProtectedRoute from "./routes/ProtectedRoutes";
 
-// Portfolio Components
+// Pages
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -16,7 +17,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import CompanySlider from "./components/CompanySlider";
 
-// Admin Components (you will create these)
+// Admin
 import Login from "./admin/Login";
 import Dashboard from "./admin/Dashboard";
 import AddProject from "./admin/AddProject";
@@ -64,18 +65,34 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <Routes>
-        {/* Public SPA (portfolio site) */}
-        <Route path="/" element={<PortfolioPage />} />
-
-        {/* Admin Routes */}
-        <Route path="/admin/login" element={<Login />} />
-        <Route path="/admin/dashboard" element={<Dashboard />} />
-        <Route path="/admin/add" element={<AddProject />} />
-        <Route path="/admin/edit/:id" element={<EditProject />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<PortfolioPage />} />
+      <Route path="/admin/login" element={<Login />} />
+      <Route
+        path="/admin/dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/add"
+        element={
+          <ProtectedRoute>
+            <AddProject />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/edit/:id"
+        element={
+          <ProtectedRoute>
+            <EditProject />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
   );
 }
 
