@@ -1,27 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import login from "../assets/login.png";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig";
-import { toast } from "react-toastify"; // ✅ required for toasts
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-
 const Login = () => {
-
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState(""); // ✅ changed from username
+  const [email, setEmail] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
+
+  // ✅ Load saved credentials on page load
+  useEffect(() => {
+    const savedEmail = localStorage.getItem("rememberEmail");
+    const savedPassword = localStorage.getItem("rememberPassword");
+
+    if (savedEmail && savedPassword) {
+      setEmail(savedEmail);
+      setPassword(savedPassword);
+      setRememberMe(true);
+    }
+  }, []);
 
   const handleLogin = async () => {
     if (!email || !password) {
       toast.error("Email and password are required!");
       return;
     }
-  
+
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
+
+      // ✅ Save credentials if "Remember me" checked
+      if (rememberMe) {
+        localStorage.setItem("rememberEmail", email);
+        localStorage.setItem("rememberPassword", password);
+      } else {
+        localStorage.removeItem("rememberEmail");
+        localStorage.removeItem("rememberPassword");
+      }
+
       localStorage.setItem("admin", "true");
       toast.success("Welcome back!");
       navigate("/admin/dashboard");
@@ -30,7 +51,6 @@ const Login = () => {
       toast.error("Invalid email or password");
     }
   };
-  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#f9f9f9] px-4">
@@ -77,14 +97,23 @@ const Login = () => {
               </div>
             </div>
 
+            {/* Remember me */}
             <div className="flex items-center justify-between">
               <label className="flex items-center">
-                <input type="checkbox" className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={() => setRememberMe(!rememberMe)}
+                  className="mr-2"
+                />
                 <span className="text-sm text-gray-600">Remember me</span>
               </label>
-              <a href="#" className="text-sm text-[#FCB415] hover:underline">Forgot your password?</a>
+              <a href="#" className="text-sm text-[#FCB415] hover:underline">
+                Forgot your password?
+              </a>
             </div>
 
+            {/* Login Button */}
             <button
               onClick={handleLogin}
               className="w-full bg-[#FCB415] text-white py-2 rounded hover:bg-[#e6a800] transition duration-300"

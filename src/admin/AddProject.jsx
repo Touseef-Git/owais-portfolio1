@@ -81,11 +81,11 @@ const AddProject = () => {
         createdAt: new Date(),
       });
 
-      alert("✅ Project saved successfully!");
+      toast.success("✅ Project saved successfully!");
       navigate("/admin/dashboard");
     } catch (error) {
       console.error("Error saving project:", error);
-      alert("❌ Failed to save project.");
+      toast.error("❌ Failed to save project.");
     } finally {
       setLoading(false);
     }
@@ -100,7 +100,7 @@ const AddProject = () => {
     >
       <div className="max-w-4xl w-full bg-white rounded-lg shadow-2xl p-8 md:p-12">
         <h2 className="text-3xl font-bold text-center text-[#FCB415] mb-8">
-          ➕ Add New Project
+           Add New Project
         </h2>
 
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -179,7 +179,7 @@ const AddProject = () => {
               disabled={loading}
               className={`${
                 loading ? "opacity-50 cursor-not-allowed" : "hover:bg-yellow-500"
-              } bg-[#FCB415] text-white font-semibold py-2 px-8 rounded-full transition duration-300`}
+              } border border-gray-400 shadow-md bg-[#FCB415] text-white font-semibold py-2 px-8 rounded-full transition duration-300`}
             >
               {loading ? "Saving..." : "Save Project"}
             </button>

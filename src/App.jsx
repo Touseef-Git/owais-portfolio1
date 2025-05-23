@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Routes, Route } from "react-router-dom"; // ✅ Corrected here
+import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify"; // ✅ Toast import
+import "react-toastify/dist/ReactToastify.css"; // ✅ Toast style
 import ProtectedRoute from "./routes/ProtectedRoutes";
 
 // Pages
@@ -65,34 +67,47 @@ function App() {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<PortfolioPage />} />
-      <Route path="/admin/login" element={<Login />} />
-      <Route
-        path="/admin/dashboard"
-        element={
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        }
+    <>
+      <Routes>
+        <Route path="/" element={<PortfolioPage />} />
+        <Route path="/admin/login" element={<Login />} />
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/add"
+          element={
+            <ProtectedRoute>
+              <AddProject />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/edit/:id"
+          element={
+            <ProtectedRoute>
+              <EditProject />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+
+      {/* ✅ Global Toast Notification Container */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="light"
       />
-      <Route
-        path="/admin/add"
-        element={
-          <ProtectedRoute>
-            <AddProject />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/admin/edit/:id"
-        element={
-          <ProtectedRoute>
-            <EditProject />
-          </ProtectedRoute>
-        }
-      />
-    </Routes>
+    </>
   );
 }
 

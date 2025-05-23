@@ -31,7 +31,7 @@ const Resume = () => {
                             </div>
                             <div className="w-2/3">
                                 <h5 className="text-lg font-bold text-[#0f2943]">Chief Technology Officer (CTO)</h5>
-                                <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                                <ul className="list-disc list-outside text-gray-600 mt-2 space-y-1">
                                     <li> Lead and manage technical teams to ensure successful project delivery.</li>
                                     <li>Solve complex technical issues in existing projects.</li>
                                     <li>Evaluate and plan new projects to align with company goals.</li>
@@ -40,7 +40,7 @@ const Resume = () => {
                                 </ul>
                                 <h5 className="text-lg font-bold mt-3 text-[#0f2943]">Team Lead.
                                 </h5>
-                                <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                                <ul className="list-disc list-outside text-gray-600 mt-2 space-y-1">
                                     <li>Lead and manage a team, dividing projects into modules and assigning tasks to ensure
                                         efficient workflow.</li>
                                     <li>Review and provide feedback on team members' code to maintain high-quality standards.</li>
@@ -51,7 +51,7 @@ const Resume = () => {
                                 </ul>
                                 <h5 className="text-lg font-bold mt-3 text-[#0f2943]">Senior Flutter Developer
                                 </h5>
-                                <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                                <ul className="list-disc list-outside text-gray-600 mt-2 space-y-1">
                                     <li>Lead the development and deployment of mobile applications on both Google Play Store
                                     and Apple App Store.</li>
                                     <li>Ensure smooth functionality by identifying and resolving technical issues throughout the
@@ -75,7 +75,7 @@ const Resume = () => {
                             <div className="w-2/3">
                                 <h5 className="text-md font-bold text-[#0f2943]">Senior Flutter Developer
                                 </h5>
-                                <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                                <ul className="list-disc list-outside text-gray-600 mt-2 space-y-1">
                                     <li>Collaborated with a team of Flutter developers on the GR Live project, a large-scale
                                         application similar to TikTok.</li>
                                     <li>CollaboratedDeveloped and integrated key modules including chat functionality and live streaming
@@ -97,7 +97,7 @@ const Resume = () => {
 
                             <div className="w-2/3">
                                 <h5 className="text-md font-bold text-[#0f2943]">Frontend Developer (Flutter)</h5>
-                                <ul className="list-disc list-inside text-gray-600 mt-2 space-y-1">
+                                <ul className="list-disc list-outside text-gray-600 mt-2 space-y-1">
                                     <li> UI Development: Build and design mobile app interfaces using Flutter’s widget-based
                                         framework, ensuring responsive and adaptive user experiences across both Android and iOS.</li>
                                     <li>State Management: Implement and manage application state management using GetX to

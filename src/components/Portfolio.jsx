@@ -44,7 +44,7 @@ const Portfolio = () => {
         ) : (
           <Swiper
             spaceBetween={20}
-            slidesPerView={2}
+            slidesPerView={3}
             loop={true}
             autoplay={{
               delay: 2500,
@@ -56,7 +56,7 @@ const Portfolio = () => {
           >
             {projects.map((project) => (
               <SwiperSlide key={project.id}>
-                <div className="bg-white h-[400px] flex flex-col justify-between rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="max-w-sm bg-white border border-gray-200 rounded-lg justify-between rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700">
                   <img
                     src={project.image}
                     alt={project.title}

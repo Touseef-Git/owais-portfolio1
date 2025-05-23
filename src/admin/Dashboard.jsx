@@ -9,6 +9,7 @@ import {
   orderBy,
 } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Dashboard = () => {
   const [projects, setProjects] = useState([]);
@@ -27,59 +28,60 @@ const Dashboard = () => {
     return () => unsubscribe();
   }, []);
 
-  // ✅ Delete project
   const handleDelete = async (id) => {
     const confirm = window.confirm("Are you sure you want to delete this project?");
     if (!confirm) return;
 
     try {
       await deleteDoc(doc(db, "projects", id));
-      alert("✅ Project deleted!");
+      toast.success("✅ Project deleted!");
     } catch (err) {
       console.error("Delete error:", err);
-      alert("❌ Error deleting project.");
+      toast.error("❌ Error deleting project.");
     }
   };
 
-  // ✅ Navigate to edit page
   const handleEdit = (id) => {
     navigate(`/admin/edit/${id}`);
   };
 
   return (
-    <div className="min-h-screen bg-[#f9f9f9] px-6 py-10">
+    <div className="min-h-screen bg-[#f9f9f9] px-4 py-8 md:px-6 md:py-10">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-        <h2 className="text-3xl font-bold text-[#FCB415]">📋 Admin Dashboard</h2>
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-[#FCB415]">
+          📋 Admin Dashboard
+        </h2>
 
-        <div className="flex gap-3">
-        <button
-  onClick={() => {
-    localStorage.removeItem("admin");
-    navigate("/admin/login");
-  }}
-  className="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600"
->
-  🚪 Logout
-</button>
+        <div className="flex flex-wrap gap-3">
+          <button
+            onClick={() => {
+              localStorage.removeItem("admin");
+              navigate("/admin/login");
+            }}
+            className="border border-gray-400 text-[#FCB415] px-5 py-2 rounded-full shadow-md hover:bg-[#FCB415] hover:text-white"
+          >
+             Logout
+          </button>
 
           <button
             onClick={() => navigate("/")}
-            className="bg-[#FCB415] text-white px-5 py-2 rounded-full hover:bg-yellow-500 transition"
+            className="border border-gray-400 text-[#FCB415] px-5 py-2 rounded-full shadow-md hover:bg-[#FCB415] hover:text-white"
           >
-            🔙 Home
+             Home
           </button>
+
           <button
             onClick={() => navigate("/admin/add")}
-            className="bg-green-500 text-white px-5 py-2 rounded-full hover:bg-green-600 transition"
+            className="border border-gray-400 text-[#FCB415] px-5 py-2 rounded-full shadow-md hover:bg-[#FCB415] hover:text-white"
           >
-            ➕ Add Project
+             Add Project
           </button>
         </div>
       </div>
 
       {/* Project Cards */}
-      <div className="grid md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {projects.length === 0 ? (
           <p className="text-gray-600">No projects added yet.</p>
         ) : (
@@ -91,28 +93,29 @@ const Dashboard = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-56 object-cover"
+                className="w-full h-48 sm:h-56 object-cover"
               />
-              <div className="p-5">
-                <span className="text-sm font-bold text-[#FCB415] uppercase">
-                  {project.category}
-                </span>
-                <h3 className="text-xl font-semibold mt-2">{project.title}</h3>
-                <p className="text-gray-600 mt-2 line-clamp-3">{project.description}</p>
+              <div className="p-5 flex flex-col justify-between h-[200px]">
+                <div>
+                  <span className="text-sm font-bold text-[#FCB415] uppercase">
+                    {project.category}
+                  </span>
+                  <h3 className="text-lg font-semibold mt-2">{project.title}</h3>
+                  <p className="text-gray-600 mt-2 line-clamp-3">{project.description}</p>
+                </div>
 
-                {/* Buttons */}
                 <div className="flex justify-end mt-4 space-x-2">
                   <button
                     onClick={() => handleEdit(project.id)}
-                    className="px-4 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600"
+                    className="border border-gray-400 text-[#FCB415] px-4 py-1 rounded-full shadow-md hover:bg-[#FCB415] hover:text-white"
                   >
-                    ✏️ Edit
+                     Edit
                   </button>
                   <button
                     onClick={() => handleDelete(project.id)}
-                    className="px-4 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600"
+                    className="border border-gray-400 text-[#FCB415] px-4 py-1 rounded-full shadow-md hover:bg-[#FCB415] hover:text-white"
                   >
-                    🗑️ Delete
+                     Delete
                   </button>
                 </div>
               </div>

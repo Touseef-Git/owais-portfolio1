@@ -3,6 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { db } from "../firebaseConfig";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+
 
 const EditProject = () => {
   const { id } = useParams();
@@ -26,12 +28,12 @@ const EditProject = () => {
         if (docSnap.exists()) {
           setProject(docSnap.data());
         } else {
-          alert("❌ Project not found!");
+            toast.warn("❌ Project not found!");
           navigate("/admin/dashboard");
         }
       } catch (err) {
         console.error(err);
-        alert("❌ Error fetching project.");
+        toast.error("❌ Error fetching project.");
       }
     };
 
@@ -86,11 +88,11 @@ const EditProject = () => {
         image: updatedImage,
       });
 
-      alert("✅ Project updated successfully!");
+      toast.success("✅ Project updated successfully!");
       navigate("/admin/dashboard");
     } catch (err) {
       console.error(err);
-      alert("❌ Failed to update project.");
+      toast.error("❌ Failed to update project.");
     } finally {
       setLoading(false);
     }
@@ -180,7 +182,7 @@ const EditProject = () => {
               disabled={loading}
               className={`${
                 loading ? "opacity-50 cursor-not-allowed" : "hover:bg-yellow-500"
-              } bg-[#FCB415] text-white font-semibold py-2 px-8 rounded-full transition duration-300`}
+              } border border-gray-400 text-[#FCB415] px-8 py-2 rounded-full shadow-md hover:bg-[#FCB415] hover:text-white`}
             >
               {loading ? "Updating..." : "Update Project"}
             </button>
